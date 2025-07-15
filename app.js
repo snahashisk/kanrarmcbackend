@@ -11,7 +11,9 @@ app.use("/api/v1/stats", statsRouter);
 app.use("/api/v1/pookie", pookieRouter);
 
 app.get("/", (req, res) => {
-  res.send("Hello Pookie How You Doing?");
+  res.send(
+    "This is KanrarMC Website Backend Working in Progress: www.kanrarmc.net"
+  );
 });
 
 app.listen(PORT, () => {
