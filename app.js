@@ -2,13 +2,15 @@ import express from "express";
 
 import { PORT } from "./config/env.js";
 
+import cors from "cors";
+
 import statsRouter from "./routes/stats.routes.js";
-import pookieRouter from "./routes/pookie.routes.js";
+4;
 
 const app = express();
+app.use(cors());
 
 app.use("/api/v1/stats", statsRouter);
-app.use("/api/v1/pookie", pookieRouter);
 
 app.get("/", (req, res) => {
   res.send(
