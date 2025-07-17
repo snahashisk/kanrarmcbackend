@@ -73,4 +73,22 @@ statsRouter.get("/plays", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch player stats" });
   }
 });
+
+statsRouter.get("/votes", async (req, res) => {
+  try {
+    const [rows] = await db.query(`
+    SELECT pu.uuid, pv.user_name, SUM(pv.votes) AS total_votes
+    FROM plan_votes pv
+    JOIN plan_users pu ON pv.user_name = pu.name
+    GROUP BY pv.user_name, pu.uuid
+    ORDER BY total_votes DESC
+    LIMIT 6;
+      `);
+    res.json(rows);
+  } catch (error) {
+    console.error("Error fetching player stats:", error);
+    res.status(500).json({ error: "Failed to fetch player stats" });
+  }
+});
+
 export default statsRouter;
