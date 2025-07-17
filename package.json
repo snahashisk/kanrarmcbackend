@@ -7,8 +7,9 @@
     "node": "22.x"
   },
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app.js",
+    "dev":"nodemon app.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
