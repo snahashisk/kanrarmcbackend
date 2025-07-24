@@ -6,11 +6,11 @@ const statsRouter = Router();
 
 // Create MySQL connection pool
 const db = mysql.createPool({
-  host: "45.113.226.161",
-  port: 3306, // Replace with your DB port
-  user: "u171_7XT0ZOrPgu", // Replace with your DB user
-  password: "iD!r3t@t!W6X6o7WPr4=EBJ6", // Replace with your DB password
-  database: "s171_Plan", // Replace with your DB name
+  host: "103.247.19.105",
+  port: 3306,
+  user: "u171_uLZYgTQHtE",
+  password: "v0Tx4yehc2ur!f62.1Xc4vEo",
+  database: "s171_Plan",
 });
 
 // GET /api/v1/stats
